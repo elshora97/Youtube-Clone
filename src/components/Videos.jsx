@@ -3,9 +3,15 @@ import { Stack, Box } from "@mui/system";
 import { Video } from "./";
 import { ChannelCard } from "./";
 
-const Videos = ({ videos }) => {
+const Videos = ({ videos, direction }) => {
+  if (!videos?.length) return "Loading...";
   return (
-    <Stack direction="row" flexWrap="wrap" justifyContent="start" gap={2}>
+    <Stack
+      direction={direction || "row"}
+      flexWrap="wrap"
+      justifyContent="start"
+      gap={2}
+    >
       {videos.map((item, index) => {
         return (
           <Box key={index}>
